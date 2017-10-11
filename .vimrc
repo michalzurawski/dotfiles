@@ -16,6 +16,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,12 +75,16 @@ autocmd BufRead,BufNewFile *.yaml setlocal spell spelllang=en_us "language check
 set exrc "enables project-specific .vimrc
 set secure "disables unsafe commands
 
-"colorscheme slate
-colorscheme selenized
+colorscheme delek
+"colorscheme selenized
 
 autocmd VimEnter * NERDTree "starts nerdtree
 
 set ttyfast "optimize for fast terminal connections
+
+let g:signify_vcs_list              = [ 'git' ]
+let g:signify_cursorhold_insert     = 1
+let g:signify_cursorhold_normal     = 1
 
 " gotags
 let g:tagbar_type_go = {
